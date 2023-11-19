@@ -1,0 +1,14 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'recipe_index' %>
+<% end %>
+<h1>List of Recipes: </h1>
+<% @recipes.each do |recipe| %>
+  <div class="recipe-profile">
+    <ul>
+        <li>
+            <h2><%= recipe.name %></h2>
+            <p>Recipe by: <%= recipe.user.name %></p>
+        </li>
+    </ul>
+  </div>
+<% end %>
