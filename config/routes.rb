@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, path: 'auth'
-  
+
   get '/users', to: 'users#index', as: :users
   get '/foods', to: 'foods#index', as: :foods
   get '/recipes', to: 'recipes#index', as: :recipes
@@ -9,8 +9,8 @@ Rails.application.routes.draw do
   get '/general_shopping_list', to: 'shopping#general_list', as: :general_shopping_list
 
   resources :users, only: [:index, :show, :new] do
-    resources :recipes do
-    end
+    resources :recipes
+    resources :foods
   end
 
   authenticated :user do
