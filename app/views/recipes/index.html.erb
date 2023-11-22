@@ -1,6 +1,8 @@
 <% content_for :head do %>
   <%= stylesheet_link_tag 'recipe_index' %>
 <% end %>
+
+<%= render 'shared/navbar' %>
 <h1>List of Recipes: </h1>
 <% @recipes.each do |recipe| %>
   <div class="recipe-profile">
@@ -12,3 +14,5 @@
     </ul>
   </div>
 <% end %>
+
+<%= link_to 'Add New Recipe', new_user_recipe_path(current_user), class: 'btn btn-primary' %>
