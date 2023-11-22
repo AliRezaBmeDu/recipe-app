@@ -7,10 +7,14 @@ Rails.application.routes.draw do
   get '/recipes/:recipe_id', to: 'recipes#show', as: :recipe_specific
   get '/public_recipes', to: 'recipes#public_recipe', as: :public_recipe
   get '/general_shopping_list', to: 'shopping#general_list', as: :general_shopping_list
-  root "users#index"
+
+  resources :users, only: [:index, :show, :new] do
+    resources :recipes do
+    end
+  end
 
   authenticated :user do
-    root to: 'users#index', as: :authenticated_root
+    root to: 'recipes#public_recipe', as: :authenticated_root
   end
 
   devise_scope :user do
