@@ -29,6 +29,12 @@ class RecipesController < ApplicationController
         end
     end
 
+    def toggle_public
+      @recipe = Recipe.find(params[:id])
+      @recipe.change_public_status
+      redirect_to recipe_specific_path(recipe_id: @recipe.id), notice: 'Recipe status has changed.'
+    end
+
     private
 
   def set_recipe

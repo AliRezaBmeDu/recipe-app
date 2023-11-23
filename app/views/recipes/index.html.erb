@@ -8,7 +8,7 @@
   <div class="recipe-profile">
     <ul>
         <li>
-            <h2><%= recipe.name %></h2>
+            <h2><%= link_to recipe.name, recipe_specific_path(recipe) %></h2>
             <p>Recipe by: <%= recipe.user.name %></p>
         </li>
     </ul>
