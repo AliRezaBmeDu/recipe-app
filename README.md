@@ -79,10 +79,7 @@ LinkedIn: [LinkedIn](https://www.linkedin.com/in/shahzaman900/).
 </br>
 Github: [Github](https://github.com/sheezu900).
 
-👤 Graciano Henrique
-
-Email:[Email](gracianomanuelhenrique@gmail.com).</br>
-Github: [Github](https://github.com/Graciano1997).
+👤 Ali Reza
 
 
 ## 🔭 Future Features <a name="future-features"></a>
