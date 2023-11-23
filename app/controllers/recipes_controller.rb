@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
     before_action :set_recipe, only: [:show]
 
     def index
-        @recipes = Recipe.all
+        @recipes = current_user.recipes
     end
 
     def show

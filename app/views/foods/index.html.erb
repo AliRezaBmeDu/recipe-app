@@ -1,0 +1,46 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'recipe_index' %>
+<% end %>
+
+<%= render 'shared/navbar' %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>List of Foods:</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 text-right">
+      <%= link_to 'Add New Food', new_user_food_path(current_user), class: 'btn btn-primary' %>
+    </div>
+  </div>
+
+  <div class="row mt-3">
+    <div class="col-12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Food</th>
+            <th>Measurement Unit</th>
+            <th>Unit Price</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @foods.each do |food| %>
+            <tr>
+              <td><%= food.name %></td>
+              <td><%= food.measurement_unit %></td>
+              <td>$ <%= food.price %></td>
+              <td>
+                <%= link_to 'Delete', user_food_path(current_user, food), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
