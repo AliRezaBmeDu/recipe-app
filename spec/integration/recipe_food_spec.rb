@@ -18,5 +18,10 @@ RSpec.describe 'Recipe Food', type: :feature do
       expect(page).to have_text('Ingredient quantity')
       expect(page).to have_button('Add Ingredient')
     end
+
+    it 'show remove button in recipe show page' do
+      visit recipe_specific_path(@recipe)
+      expect(page).to have_button('Remove')
+    end
   end
 end
