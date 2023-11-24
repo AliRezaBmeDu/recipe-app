@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/recipes/:recipe_id', to: 'recipes#show', as: :recipe_specific
   get '/public_recipes', to: 'recipes#public_recipe', as: :public_recipe
   post '/users/:user_id/foods', to: 'foods#create', as: :add_new_food
+  delete '/users/:user_id/foods/:id', to: 'foods#destroy', as: :delete_food
+  delete '/users/:user_id/recipes/:id', to: 'recipes#destroy', as: :delete_recipe
 
   resources :users, only: [:index, :show, :new] do
     resources :foods, except: [:update, :edit]

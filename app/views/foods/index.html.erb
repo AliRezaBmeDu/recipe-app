@@ -35,7 +35,7 @@
               <td><%= food.measurement_unit %></td>
               <td><%= food.price %></td>
               <td>
-                <%= link_to 'Delete', user_food_path(current_user, food), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+                <%= button_to 'Delete', delete_food_path(current_user, id: food.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
               </td>
             </tr>
           <% end %>

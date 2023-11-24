@@ -35,6 +35,16 @@ class RecipesController < ApplicationController
       redirect_to recipe_specific_path(recipe_id: @recipe.id), notice: 'Recipe status has changed.'
     end
 
+    def destroy
+      @recipe = current_user.recipes.find(params[:id])
+  
+      if @recipe.destroy
+        redirect_to recipes_path, notice: 'Recipe deleted successfully'
+      else
+        redirect_to recipes_path, notice: 'Recipe cannot delete'
+      end
+    end
+
     private
 
   def set_recipe

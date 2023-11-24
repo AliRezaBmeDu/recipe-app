@@ -20,6 +20,7 @@ class RecipeFoodsController < ApplicationController
   
     def destroy
       @recipe_food = RecipeFood.find(params[:id])
+      @recipe = Recipe.find(params[:recipe_id])
   
       if @recipe_food.destroy
         redirect_to recipe_specific_path(recipe_id: @recipe_food.recipe), notice: 'Ingredient removed successfully'
