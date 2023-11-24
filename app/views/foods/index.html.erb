@@ -35,8 +35,18 @@
               <td><%= food.measurement_unit %></td>
               <td><%= food.price %></td>
               <td>
-                <%= button_to 'Delete', delete_food_path(current_user, id: food.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+                <% if food.user == current_user %>
+                  <%= button_to 'Delete', delete_food_path(current_user, id: food.id),
+                                method: :delete, data: { confirm: 'Are you sure?' },
+                                class: 'btn btn-danger' %>
+                <% else %>
+                  <%= button_to 'Delete', "",
+                                class: 'btn btn-danger',
+                                disabled: true,
+                                title: 'You cannot delete this food' %>
+                <% end %>
               </td>
+
             </tr>
           <% end %>
         </tbody>
