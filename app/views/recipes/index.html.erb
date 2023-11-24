@@ -3,16 +3,23 @@
 <% end %>
 
 <%= render 'shared/navbar' %>
-<h1>List of Recipes: </h1>
-<% @recipes.each do |recipe| %>
-  <div class="recipe-profile">
-    <ul>
-        <li>
-            <h2><%= link_to recipe.name, recipe_specific_path(recipe) %></h2>
-            <p>Recipe by: <%= recipe.user.name %></p>
-        </li>
-    </ul>
-  </div>
-<% end %>
+<div class="container mt-4">
+  <h1 class="title d-flex justify-content-center">List of Recipes: </h1>
+  <% @recipes.each do |recipe| %>
+    <div class="d-flex justify-content-between mt-4 p-4 border rounded">
+        <div>
+          <h2><%= link_to recipe.name, recipe_specific_path(recipe), class: "text-decoration-none" %></h2>
+          <button>REMOVE</button>
+        </div>
 
-<%= link_to 'Add New Recipe', new_user_recipe_path(current_user), class: 'btn btn-primary' %>
+        <div>
+          <p><%= recipe.description %></p>
+        </div>
+    </div>
+  <% end %>
+
+  <div class="d-flex justify-content-center mt-4">
+    <%= link_to 'Add New Recipe', new_user_recipe_path(current_user), class: 'btn btn-success' %>
+  </div>
+
+</div>

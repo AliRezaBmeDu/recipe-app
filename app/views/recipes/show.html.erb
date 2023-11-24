@@ -3,30 +3,36 @@
 <% end %>
 
 <%= render 'shared/navbar' %>
-<h1>Recipe <%= @recipe.name %></h1>
-<p>Preparation time: <%= @recipe.preparation_time %> hour</p>
-<p>Cooking time: <%= @recipe.cooking_time %> hour</p>
+<div class="container mt-4">
+  <h1 class="title d-flex justify-content-center">Recipe <%= @recipe.name %></h1>
 
-<div class="d-flex g-3">
-  <div class="mr-3">Public .</div>
-  <%= form_with model: @recipe, url: toggle_public_user_recipe_path(current_user, @recipe), method: :put, local: true do |form| %>
-    <div class="form-check form-switch ml-3">
-      <%= form.hidden_field :public, value: "0" %> <!-- Hidden field for 'No' value -->
-      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" <%= 'checked' if @recipe.public? %>>
+  <div class="d-flex justify-content-between mt-4">
+    <div>
+      <p><strong>Preparation time:</strong> <%= @recipe.preparation_time %> hour</p>
+      <p><strong>Cooking time:</strong> <%= @recipe.cooking_time %> hour</p>
     </div>
-  <% end %>
+    <div class="d-flex g-3">
+      <div class="mr-3">Public .</div>
+      <%= form_with model: @recipe, url: toggle_public_user_recipe_path(current_user, @recipe), method: :put, local: true do |form| %>
+        <div class="form-check form-switch ml-3">
+          <%= form.hidden_field :public, value: "0" %> <!-- Hidden field for 'No' value -->
+          <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" <%= 'checked' if @recipe.public? %>>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <p>Steps go here...</p>
+
+  <div class="d-flex justify-content-between mt-3">
+    <%= link_to 'Generate Shopping List',general_shopping_list_path, class: "btn btn-success" %>
+    <% if @recipe.user == current_user %>
+      <%= link_to 'Add Ingredient',new_user_recipe_recipe_food_path(current_user,@recipe), class: "btn btn-primary" %>
+    <% end %>
+  </div>
+  <hr />
+
 </div>
-
-<p>Steps go here...</p>
-
-<div class="is-flex is-justify-content-space-between mt-3">
-  <%= link_to 'Generate Shopping List',general_shopping_list_path, class: "button is-info is-light" %>
-  <% if @recipe.user == current_user %>
-    <%= link_to 'Add Ingredient',new_user_recipe_recipe_food_path(current_user,@recipe), class: "button is-warning is-light" %>
-  <% end %>
-</div>
-<hr />
-
 
 <script>
   // Add this script to handle the form submission when the checkbox state changes
