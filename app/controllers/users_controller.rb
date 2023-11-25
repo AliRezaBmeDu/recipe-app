@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: [:show]
+  before_action :set_user, only: [:show]
 
-    def index
-        @users = User.all
-    end
+  def index
+    @users = User.all
+  end
 
-    def show
-    end
+  def show; end
 
     def shopping_list
       @foods = current_user.foods
