@@ -15,7 +15,7 @@ RSpec.describe 'User', type: :feature do
     it 'have a form for signing in' do
       visit new_user_session_path
       expect(page).to have_field('Email', placeholder: 'Email')
-  expect(page).to have_field('Password', placeholder: 'Password')
+      expect(page).to have_field('Password', placeholder: 'Password')
     end
 
     it 'log in with credentials' do

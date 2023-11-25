@@ -13,7 +13,7 @@ RSpec.describe 'Recipe Food', type: :feature do
   end
   describe 'Recipe food page' do
     it 'render add ingredient form' do
-      visit new_user_recipe_recipe_food_path(@user,@recipe)
+      visit new_user_recipe_recipe_food_path(@user, @recipe)
       expect(page).to have_text('Food name')
       expect(page).to have_text('Ingredient quantity')
       expect(page).to have_button('Add Ingredient')
@@ -23,7 +23,7 @@ RSpec.describe 'Recipe Food', type: :feature do
       expect(page).to have_button('Remove')
     end
     it 'show recipe food details' do
-      visit user_recipe_recipe_foods_path(@user,@recipe)
+      visit user_recipe_recipe_foods_path(@user, @recipe)
       expect(page).to have_content(@recipe.foods.name)
     end
   end

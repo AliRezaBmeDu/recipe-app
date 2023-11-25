@@ -43,9 +43,7 @@ class FoodsController < ApplicationController
   def destroy
     @food = current_user.foods.find(params[:id])
     @recipe_foods = @food.recipe_foods
-    @recipe_foods.each do |r_f|
-      r_f.destroy
-    end
+    @recipe_foods.each(&:destroy)
     @food.destroy
 
     redirect_to foods_url, notice: 'Food was successfully destroyed.'

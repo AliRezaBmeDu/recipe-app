@@ -48,7 +48,7 @@ RSpec.describe 'Recipe', type: :feature do
     end
 
     it 'contain button to generate shop list' do
-        visit recipe_specific_path(@user.id, @recipe.id)
+      visit recipe_specific_path(@user.id, @recipe.id)
       expect(page).to have_content('Generate Shopping List')
     end
   end
