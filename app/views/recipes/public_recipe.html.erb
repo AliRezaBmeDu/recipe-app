@@ -1,0 +1,24 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'recipe_index' %>
+  <!-- Add Bootstrap stylesheet link here if not already included -->
+  <%= stylesheet_link_tag 'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
+<% end %>
+
+<%= render 'shared/navbar' %>
+
+<div class="container mt-4">
+  <h1 class="title is-flex is-justify-content-center">List of Public Recipes</h1>
+
+  <% @recipe_public.each do |recipe| %>
+    <div class="d-flex justify-content-between mt-4 p-4 border rounded">
+      <div>
+        <h5><%= link_to recipe.name, recipe_specific_path(recipe), class: "text-info" %></h5>
+        <p>By: <%= recipe.user.name %></p>
+      </div>
+      <div>
+        <p>Total food items: <%= recipe.foods.count %></p>
+        <p>Total price: <%= number_to_currency(recipe.foods.sum(:price)) %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
