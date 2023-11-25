@@ -13,15 +13,19 @@ class RecipesController < ApplicationController
     end
 
     def new
-        @recipe = Recipe.new
+        @user = current_user
+        @recipe = @user.recipes.new
     end
 
     def create
-        @recipe = Recipe.new(recipe_params)
+        @user = current_user
+        @recipe = @user.recipes.new(recipe_params)
+        
         if @recipe.save
-        redirect_to @recipe, notice: 'Recipe was successfully created.'
+          redirect_to recipe_specific_path(recipe_id: @recipe.id), notice: 'Recipe was successfully created.'
         else
-        render :new
+          render :new
+          puts 'Error in saving'
         end
     end
 
