@@ -16,7 +16,10 @@
                 <%= link_to "Recipes", recipes_path, class: "nav-link" %>
               </div>
               <div class="col">
-                <%= link_to "Edit Account", edit_user_registration_path, class: "nav-link" %>
+                <%= link_to "Public", public_recipe_path, class: "nav-link" %>
+              </div>
+              <div class="col">
+                <%= link_to "Edit Account", edit_user_registration_path, class: "btn btn-warning", style: "width: 150px;" %>
               </div>
               <div class="col">
                 <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-danger mx-3", style: "width: 150px;" %>

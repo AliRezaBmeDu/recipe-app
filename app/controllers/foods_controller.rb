@@ -10,16 +10,19 @@ class FoodsController < ApplicationController
   end
 
   def new
-    @food = current_user.foods.build
+    @user = current_user
+    @food = @user.foods.new
   end
 
   def create
-    @food = current_user.foods.build(food_params)
+    @user = current_user
+    @food = @user.foods.new(food_params)
 
     if @food.save
-      redirect_to @food, notice: 'Food was successfully created.'
+      redirect_to user_food_path(user_food: @user, id: @food), notice: 'Food was successfully created.'
     else
       render :new
+      puts 'Error in saving food'
     end
   end
 
@@ -31,7 +34,7 @@ class FoodsController < ApplicationController
     @food = current_user.foods.find(params[:id])
 
     if @food.update(food_params)
-      redirect_to @food, notice: 'Food was successfully updated.'
+      redirect_to user_food_path(@user, @food), notice: 'Food was successfully updated.'
     else
       render :edit
     end
@@ -39,6 +42,8 @@ class FoodsController < ApplicationController
 
   def destroy
     @food = current_user.foods.find(params[:id])
+    @recipe_foods = @food.recipe_foods
+    @recipe_foods.each(&:destroy)
     @food.destroy
 
     redirect_to foods_url, notice: 'Food was successfully destroyed.'

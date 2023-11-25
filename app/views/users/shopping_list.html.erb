@@ -1,0 +1,31 @@
+<main>
+  <h1 class="mt-5 title d-flex justify-content-center">Shopping List</h1>
+
+  <div class="mt-4 d-flex justify-content-center">
+     <strong> <p class="mx-4"> Amount of food items to buy: <%= @foods.length %> </p></strong>
+     <strong> <p class="mx-4"> Total Value of food needed: $ <%= @total %> </p></strong>
+  </div>
+
+   <section class="container"  style= "width:70%;"> 
+      <div class="d-flex mt-5 mb-5">
+        <table class="table fullwidth">
+          <thead>
+            <tr>
+              <th class="text-center">Food</th>
+              <th class="text-center">Quantity</th>
+              <th class="text-center">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @foods.each do |food| %>
+              <tr>
+                <td class="text-center"> <%= food[:name] %> </td>
+                <td class="text-center"> <%= food[:quantity] %> </td>
+                <td class="text-center"> $ <%= food[:quantity] * food[:price] %> </td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </section>
+</main>
