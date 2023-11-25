@@ -1,111 +1,161 @@
+<a name="readme-top"></a>
+
+<!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
   - [🛠 Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
 - [💻 Getting Started](#getting-started)
+  - [Setup](#setup)
   - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Test](#test)
 - [👥 Authors](#authors)
 - [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
 - [📝 License](#license)
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 Food Recipe <a name="about-project"></a>
+# 📖 Recipe-App  <a name="about-project"></a>
 
-**blog** is a project where user can create posts, add comments to the post as well, likes.
+**Recipe-App** is a Ruby-On-Rails application which is a classic example of a recipe application where users can create recipe and have their food list. They can make the recipes public so that the other users can see that.
 
 ## 🛠 Built With <a name="built-with"></a>
 
-### Tech Stack
-
-This project is built using the following technologies:
+### Tech Stack <a name="tech-stack"></a>
 
 <details>
-<summary>Programming Languages</summary>
+  <summary>Server</summary>
   <ul>
     <li>Ruby on Rails</li>
   </ul>
 </details>
 
-### Key Features <a name="key-features"></a>
-
 <details>
+<summary>Database</summary>
   <ul>
-    <li>App has a database</li>
-    <!-- <li>Database has 4 tables (Users, Posts, Comments, Likes)</li> -->
+    <li>Postgresql</li>
   </ul>
 </details>
 
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
+
+- **DRY method**
+- **CRUD operation**
+- **Add new recipe features**
+- **Add new food feature**
+- **Unit Test**
+- **Authentication with Devise**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
 
-## Getting Started <a name="getting-started"></a>
+## 💻 Getting Started <a name="getting-started"></a>
 
-To get started with the blog, follow the steps below:
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-Before running this project, make sure you have the following prerequisites installed:
+In order to run this project you need:
 
-- Ruby on rails
+### Setup
 
-### Installation <a name="installation"></a>
+Clone this repository to your desired folder:
 
-1. Clone this repository to your desired folder:
+https://github.com/AliRezaBmeDu/recipe-app.git
 
-   ```sh
-   git clone https://github.com/AliRezaBmeDu/recipe-app.git
+### Install
 
-2. Navigate to the project directory:
+```sh
+  cd recipe-app
+  bundle install
+  npm install
+```
 
-    ```sh
-    cd blog-rails
-3. Run the program:
-    ```sh
-    rails s
+### Usage
+
+To run the project, execute the following steps:
+
+```sh
+  rails server
+```
+And insert commands for CRUD operations
+
+### Test
+
+To run the unit test files, run the following command in the terminal:
+
+```sh
+  rspec
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-👤 Shah Zaman
 
-LinkedIn: [LinkedIn](https://www.linkedin.com/in/shahzaman900/).
-</br>
-Github: [Github](https://github.com/sheezu900).
+👤 **Mohammad Ali Reza**
 
-👤 Ali Reza
+- GitHub: [@githubhandle](https://github.com/AliRezaBmeDu)
+- Twitter: [@twitterhandle](https://twitter.com/share_insider)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mohammad-ali-reza-25686428b/)
 
+👤 **Shah Zaman**
+
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/shahzaman900/)
+- Github: [Github](https://github.com/sheezu900).
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-<details>
-<summary>In near future I am planning to implement the following:</summary>
-  <ul>
-    <li>UI</li>
-    <li>Allow user to add posts</li>
-    <li>Allow user to add comments and likes</li>
-  </ul>
-</details>
+- [ ] **Make it viable to a web app**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
+
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the issues page.
-[issues page](https://github.com/sheezu900/blog-rails/issues).
+Feel free to check the [issues page](https://github.com/AliRezaBmeDu/recipe-app/issues).
 
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- SUPPORT -->
+
+## ⭐️ Show your support <a name="support"></a>
+
+If you like this project please give it a ⭐️
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGEMENTS -->
+
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-We would like to express my gratitude to the code reviewers who help me improve.
+
+**All the documents provided by microverse.**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->
+
 ## 📝 License <a name="license"></a>
+
 This project is [MIT](./LICENSE) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
